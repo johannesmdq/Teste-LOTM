@@ -1,0 +1,368 @@
+/* =================================
+   VARIÁVEIS E RESET
+   ================================= */
+:root {
+    --preto: #0a0a0f;
+    --preto-claro: #12121a;
+    --roxo: #7b2cbf;
+    --roxo-claro: #9d4edd;
+    --verde: #2d6a4f;
+    --verde-neon: #52b788;
+    --dourado: #d4af37;
+    --branco: #f0f0f5;
+    --cinza: #a0a0b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.7;
+}
+
+/* =================================
+   NAVEGAÇÃO FIXA
+   Imagem de fundo sugerida: banner do LoM
+   ================================= */
+nav {
+    background: linear-gradient(90deg, rgba(10, 10, 15, 0.95), rgba(18, 18, 26, 0.95)),
+                url('./banner-lom.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 18px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--roxo);
+    box-shadow: 0 4px 20px rgba(123, 44, 191, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 8px 18px;
+}
+
+nav ul li a {
+    color: var(--roxo-claro);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--verde-neon);
+    text-shadow: 0 0 10px var(--verde-neon);
+}
+
+/* =================================
+   SEÇÕES GERAIS
+   ================================= */
+section {
+    padding: 100px 22px;
+    text-align: center;
+}
+
+section h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 42px;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.subtitulo {
+    color: var(--roxo-claro);
+    font-style: italic;
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto 18px auto;
+    font-size: 18px;
+    color: var(--cinza);
+}
+
+/* =================================
+   HOME / HERO
+   Imagem de fundo sugerida: wallpaper do LoM
+   ================================= */
+#home {
+    background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(10, 10, 15, 0.9)),
+                url('./wallpaper-lom.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 64px;
+    color: var(--dourado);
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    margin-bottom: 16px;
+}
+
+#home p {
+    font-size: 24px;
+    color: var(--roxo-claro);
+    font-style: italic;
+}
+
+/* =================================
+   HISTÓRIA, KLEIN, TAROT, CAMINHOS, MUNDO
+   ================================= */
+#historia,
+#klein,
+#tarot,
+#caminhos,
+#mundo {
+    background-color: var(--preto-claro);
+    border-top: 1px solid rgba(123, 44, 191, 0.3);
+}
+
+/* Listas */
+#tarot ul,
+#mundo ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+#tarot ul li,
+#mundo ol li {
+    background-color: rgba(123, 44, 191, 0.1);
+    border-left: 4px solid var(--verde-neon);
+    padding: 14px 22px;
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+    color: var(--branco);
+    border-radius: 4px;
+}
+
+/* Lista de definição (Caminhos) */
+dl {
+    max-width: 700px;
+    margin: 22px auto;
+    text-align: left;
+}
+
+dt {
+    color: var(--dourado);
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+dd {
+    color: var(--cinza);
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+/* =================================
+   CARD DE CITAÇÃO
+   Imagem de fundo sugerida: The Fool / Klein misterioso
+   ================================= */
+#citacao {
+    background: linear-gradient(rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.9)),
+                url('./citacao-lom.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 140px 22px;
+    border-top: 2px solid var(--verde-neon);
+    border-bottom: 2px solid var(--verde-neon);
+}
+
+#citacao blockquote {
+    font-size: 36px;
+    font-style: italic;
+    color: var(--branco);
+    text-shadow: 0 0 20px var(--roxo-claro);
+    max-width: 900px;
+    margin: 0 auto 22px auto;
+    line-height: 1.5;
+}
+
+#citacao blockquote::before {
+    content: "“";
+    font-size: 80px;
+    color: var(--roxo);
+    display: block;
+    line-height: 0.5;
+}
+
+#citacao cite {
+    color: var(--verde-neon);
+    font-size: 20px;
+    font-style: normal;
+}
+
+/* =================================
+   CONTATO / FORMULÁRIO
+   ================================= */
+#contato {
+    background-color: var(--preto);
+}
+
+#contato p {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 12px;
+}
+
+form label {
+    text-align: left;
+    font-weight: bold;
+    color: var(--roxo-claro);
+}
+
+form input,
+form textarea {
+    padding: 14px;
+    background-color: var(--preto-claro);
+    border: 1px solid var(--roxo);
+    border-radius: 6px;
+    color: var(--branco);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--verde-neon);
+    box-shadow: 0 0 10px rgba(82, 183, 136, 0.3);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    background: linear-gradient(90deg, var(--roxo), var(--verde));
+    color: var(--branco);
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(123, 44, 191, 0.5);
+}
+
+/* =================================
+   RODAPÉ
+   Imagem de fundo sugerida: atmosfera escura do LoM
+   ================================= */
+footer {
+    background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.95)),
+                url('./footer-lom.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--cinza);
+    text-align: center;
+    padding: 40px 22px;
+    border-top: 2px solid var(--roxo);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 18px 0;
+}
+
+footer ul li a {
+    color: var(--roxo-claro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: var(--verde-neon);
+}
+
+footer p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* =================================
+   RESPONSIVIDADE BÁSICA
+   ================================= */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #home h1 {
+        font-size: 42px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    #citacao blockquote {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 80px 18px;
+    }
+}
